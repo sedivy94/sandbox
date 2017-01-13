@@ -35,9 +35,9 @@ class Graph:
 	def remove_node(self, node):
 		if isinstance(node, str):
 			old_node = lookup[node]
-			set_of_nodes.remove(old_node)
+			node_set.remove(old_node)
 			lookup[node] = None
 		elif isinstance(node, Node):
-			new_node = node
-		set_of_nodes.add(new_node)
-		lookup[new_node.name] = new_node
+			node_set.remove(node)
+			lookup[node.name] = None
+		
